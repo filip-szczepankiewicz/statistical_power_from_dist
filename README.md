@@ -1,7 +1,7 @@
 # Statistical power calculator
 By: Filip Szczepankiewicz  
 
-This is a simple calculator for statistical power implemented in Matlab. Run the function ```stat_power_from_dist(g1, g2, alpha, n_tails, do_simulate)``` and check below for instructions and examples.
+This is a simple calculator for statistical power implemented in Matlab. Run the function ```stat_power_from_dist(g1, g2, alpha, n_tails, do_simulate)``` and check below for instructions and examples. The code also includes a numerical simulation of the test, so that the result can be rapidly validated, and distribution of statistical power can be extracted.
 
 ## Description
     function    [pow, res] = stat_power_from_dist(g1, g2, alpha, n_tails, do_simulate)
