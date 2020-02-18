@@ -4,15 +4,11 @@ By: Filip Szczepankiewicz
 This is a simple calculator for statistical power implemented in Matlab. Run the function ```stat_power_from_dist(g1, g2, alpha, n_tails, do_simulate)``` and check below for instructions and examples. The code also includes a numerical simulation of the test, so that the result can be rapidly validated, and distribution of statistical power can be extracted.
 
 ## Reference
-If you use these resources, please cite:  
+If you use these resources, please consider citing:  
 [Szczepankiewicz F, Lätt J, Wirestam R, Leemans A, Sundgren P, van Westen D, Ståhlberg F, Nilsson M. Variability in diffusion kurtosis imaging: impact on study design, statistical power and interpretation.Neuroimage. 2013 Aug 1;76:145-54. doi: 10.1016/j.neuroimage.2013.02.078. Epub 2013 Mar 16.](https://www.sciencedirect.com/science/article/abs/pii/S1053811913002334?via%3Dihub)
 
 ## Description
     function    [pow, res] = stat_power_from_dist(g1, g2, alpha, n_tails, do_simulate)
-
-    Written by Filip Szczepankiewicz, 2014-03-31
-    Updated by Filip Szczepankiewicz, 2020-02-17
-               Clarifications added in the help text.
 
     OUTPUT:
     pow         - This is the statistical power of the test, i.e., the probability of
