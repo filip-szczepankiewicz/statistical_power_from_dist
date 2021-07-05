@@ -4,26 +4,34 @@ function    [pow, res] = stat_power_from_dist(g1, g2, alpha, n_tails, do_simulat
 % Written by Filip Szczepankiewicz, 2014-03-31
 % Updated by Filip Szczepankiewicz, 2020-02-17
 %            Clarifications added in the help text.
+% Updated by Filip Szczepankiewicz, 2021-07-05
+%            Minor corrections to text, added reference, and increased size
+%            of simulation.
+% 
+% If you find this code useful, please cite:
+%            Szczepankiewicz F et al. Variability in diffusion kurtosis imaging: impact on study design, 
+%            statistical power and interpretation.Neuroimage. 2013 Aug 1;76:145-54. Epub 2013 Mar 16.
+%            doi: 10.1016/j.neuroimage.2013.02.078. 
+%
 %
 % OUTPUT:
 % pow         - This is the statistical power of the test, i.e., the probability of
-%               correctly rejecting the null hypothesis (that suggested effect does
-%               not exists). It is defined as a probability between 0 and
-%               1, also denoted as 1 - beta where beta is the type II error
+%               correctly rejecting the null hypothesis . It is defined as a probability 
+%               between 0 and 1, also denoted as 1 - beta where beta is the type II error
 %               rate.
 % res         - This is a structure that contains the minimum number of subjects
 %               per group needed to reach varying levels of statistical
 %               power. It also gives an estimated minimum absolute effect
-%               size for the same levels of power, assuming input
+%               size for the same levels of power, assuming the input
 %               distribution. It also contains a message about the kind of test
-%               that was considered in the calculatitons.
+%               that was considered in the calculations.
 %
 % INPUT:
 % g1          - This is a vector containing the information about group 1.
 %               The format is: g1 = [mean stddev sampsize].
 % g2          - This is the definition of group 2. It can be a vector in
 %               the same format as g1, a scalar value, or it can be left empty/undefined.
-%               If it is a vector the test compares the two distributions g1 vs g2.
+%               If it is a vector, the test compares the two distributions g1 vs g2.
 %               If it is a scalar, the g1 mean is tested for differing from
 %               this value. If it is undefined or left empty, it is set to
 %               zero; thus g1 is tested for differing from zero.
@@ -246,7 +254,7 @@ if do_simulate
         tails = 'both';
     end
     
-    iter_o = 30;  % Number of outer iterations
+    iter_o = 100; % Number of outer iterations
     iter_i = 300; % Number of inner iterations
     
     pow_tmp = zeros(iter_o, 1)*nan;
